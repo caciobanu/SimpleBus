@@ -28,7 +28,7 @@ before_install:
   - if [ "$SYMFONY_VERSION" != "" ]; then composer require --no-update symfony/framework-bundle:$SYMFONY_VERSION; fi
 
 install:
-  - composer install $COMPOSER_FLAGS
+  - composer update $COMPOSER_FLAGS
 
 script:
   - vendor/bin/phpunit
