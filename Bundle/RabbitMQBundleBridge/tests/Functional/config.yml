@@ -3,6 +3,10 @@ parameters:
     log_file: '%kernel.logs_dir%/test.log'
 
 services:
+    old_sound_rabbit_mq.parts_holder:
+        public: true
+        class: OldSound\RabbitMqBundle\RabbitMq\AmqpPartsHolder
+    
     # needed to make JMSSerializerBundle work
     translator:
         public: true
