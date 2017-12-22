@@ -1,21 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="./vendor/autoload.php" colors="true">
+
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
+         backupGlobals="false"
+         colors="true"
+         bootstrap="vendor/autoload.php"
+         failOnRisky="true"
+         failOnWarning="true"
+>
+    <php>
+        <ini name="error_reporting" value="-1" />
+        <ini name="intl.default_locale" value="en" />
+        <ini name="intl.error_level" value="0" />
+        <ini name="memory_limit" value="-1" />
+    </php>
+
     <testsuites>
-        <testsuite>
-            <testsuite name="SimpleBus Test Suite">
-                <directory>./Bridge/*/Tests/</directory>
-                <directory>./Bundle/*/Tests/</directory>
-                <directory>./Component/*/Tests/</directory>
-            </testsuite>
+        <testsuite name="SimpleBus Test Suite">
+            <directory>./Bridge/*/tests/</directory>
+            <directory>./Bundle/*/tests/</directory>
+            <directory>./Component/*/tests/</directory>
         </testsuite>
     </testsuites>
+
     <filter>
         <whitelist>
-            <directory suffix=".php">./</directory>
+            <directory>./</directory>
             <exclude>
-                <directory>./Bridge/*/Tests/</directory>
-                <directory>./Bundle/*/Tests/</directory>
-                <directory>./Component/*/Tests/</directory>
+                <directory>./Bridge/*/tests/</directory>
+                <directory>./Bundle/*/tests/</directory>
+                <directory>./Component/*/tests/</directory>
             </exclude>
         </whitelist>
     </filter>
