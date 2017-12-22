@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit bootstrap="./vendor/autoload.php" colors="true">
+    <testsuites>
+        <testsuite>
+            <testsuite name="SimpleBus Test Suite">
+                <directory>./Bridge/*/Tests/</directory>
+                <directory>./Bundle/*/Tests/</directory>
+                <directory>./Component/*/Tests/</directory>
+            </testsuite>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory suffix=".php">./</directory>
+            <exclude>
+                <directory>./Bridge/*/Tests/</directory>
+                <directory>./Bundle/*/Tests/</directory>
+                <directory>./Component/*/Tests/</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
